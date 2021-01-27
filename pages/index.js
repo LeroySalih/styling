@@ -1,6 +1,21 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
 
+
+// https://nextjs.org/blog/styling-next-with-styled-jsx
+
+const Layout = (props) => {
+  return (
+    <div className="page-layout">
+      {props.children}
+      <style jsx global>{`
+        body {
+          background-color: red;
+        }
+      `}
+      </style>
+    </div>
+  )
+}
 export default function Home() {
   return (
     <div className={styles.container}>
